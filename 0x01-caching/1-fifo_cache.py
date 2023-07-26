@@ -13,14 +13,13 @@ class FIFOCache(BaseCaching):
 
     def put(self, key, item):
         """store objects in the cache"""
-        if key is not None or item is not None:
-            if len(self.cache_data.keys()) >= BaseCaching.MAX_ITEMS:
-                first = list(self.cache_data.keys())[0]
-                del self.cache_data[first]
-                print("DISCARD: {}".format(first))
-            self.cache_data[key] = item
-        else:
-            pass
+        if key is None or item is None:
+            return
+        if len(self.cache_data.keys()) >= BaseCaching.MAX_ITEMS:
+            first = list(self.cache_data.keys())[0]
+            del self.cache_data[first]
+            print("DISCARD: {}".format(first))
+        self.cache_data[key] = item
 
     def get(self, key):
         """get data from the cache"""
