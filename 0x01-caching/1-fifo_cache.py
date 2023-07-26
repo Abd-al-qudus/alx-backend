@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """FIFOCache is a caching system that removes the
     first element in the cache to update a new one"""
-from typing import Any
 BaseCaching = __import__('base_caching').BaseCaching
 
 
