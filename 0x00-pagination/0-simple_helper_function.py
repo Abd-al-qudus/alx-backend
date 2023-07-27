@@ -1,4 +1,4 @@
-#!?usr/bin/env python3
+#!/usr/bin/env python3
 """Helper function to compute pagination index"""
 from typing import Tuple
 
