@@ -26,7 +26,15 @@ def home():
 @babel.localeselector
 def get_locale():
     """get user locale and translate"""
-    return request.accept_languages.best_match(Config.LANGUAGES)
+    requested_locale = request.args.get('locale')
+    
+    # Check if the requested_locale is a supported locale
+    supported_locales = Config.LANGUAGES
+    if requested_locale and requested_locale in supported_locales:
+        return requested_locale
+    
+    # If not, fallback to the default behavior to determine the locale
+    return request.accept_languages.best_match(supported_locales)
 
 
 app.config.from_object(Config)
