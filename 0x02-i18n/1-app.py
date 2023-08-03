@@ -22,4 +22,5 @@ def home():
     """return a simple welcome string"""
     return render_template('1-index.html')
 
+
 app.config.from_object(Config)
