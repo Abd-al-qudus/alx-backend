@@ -20,7 +20,7 @@ class Config:
 @app.route('/')
 def home():
     """return a simple welcome string"""
-    return render_template('1-index.html')
+    return render_template('3-index.html')
 
 
 @babel.localeselector
